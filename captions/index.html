@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Coupona Captions</title>
+<style>
+:root{--bg:#f6f6f7;--card:#fff;--text:#16161a;--muted:#6b6b76;--line:#e4e4e8;--accent:#fe2c55;--accent-text:#fff;--soon:#eef0ff;--soon-text:#3a43b5;--now:#e6f7ee;--now-text:#11703f;--fail:#fdecec;--fail-text:#a12020}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0f12;--card:#1b1b20;--text:#f1f1f4;--muted:#a0a0ab;--line:#2c2c34;--soon:#252a52;--soon-text:#c4c8ff;--now:#173826;--now-text:#a6ecc4;--fail:#43191a;--fail-text:#ffb3b3}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 -apple-system,"SF Arabic","Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:20px 16px 60px}h1{font-size:1.4rem;margin:0 0 4px}h2{font-size:1rem;color:var(--muted);margin:28px 0 10px;text-transform:uppercase;letter-spacing:.04em}
+.sub,.empty{color:var(--muted);margin:0}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:14px}
+.card.is-done{opacity:.45}.card.is-done .caption,.card.is-done details{display:none}
+.head{display:flex;gap:12px;align-items:center}.thumb{width:54px;height:72px;border-radius:8px;object-fit:cover;background:var(--line);flex:none}
+.kind{font-weight:600}.date{color:var(--muted);font-size:.9rem}.badge{display:inline-block;margin-top:4px;font-size:.8rem;font-weight:600;padding:2px 8px;border-radius:99px}
+.soon{background:var(--soon);color:var(--soon-text)}.now{background:var(--now);color:var(--now-text)}.fail{background:var(--fail);color:var(--fail-text)}
+.caption{white-space:pre-wrap;margin:12px 0;padding:10px 12px;border-radius:10px;background:var(--bg);font-size:.95rem;overflow-wrap:anywhere}
+.actions{display:flex;gap:8px}button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:12px 14px;cursor:pointer}
+.copy{flex:1;background:var(--accent);color:var(--accent-text)}.copy.ok{background:#11703f}.done{background:var(--line);color:var(--text)}
+details{margin-top:10px}summary{cursor:pointer;color:var(--muted);font-size:.9rem}.steps{padding-left:20px;margin:8px 0 0}.steps li{margin-bottom:6px}
+</style></head><body><main>
+<h1>Coupona · TikTok captions</h1>
+<p class="sub">When a TikTok draft arrives, copy its caption here and paste it in TikTok.</p>
+<h2>Ready in your TikTok inbox</h2><article class="card" data-id="73c4a458">
+  <div class="head"><img class="thumb" src="https://mahmoudelrahman.github.io/tiktok-publisher/captions/t/73c4a458.jpg" alt="" loading="lazy"><div><div class="kind">Video</div>
+  <div class="date">Thu 15 Oct · 01:05 KSA</div><span class="badge now">In your TikTok inbox now</span></div></div>
+  <div class="caption" dir="auto">كود خصم نون السعودية 2026 🔥 وفّر 10% على طلبك
+استخدم الكود MCX64 عند الدفع ✅
+خصم 10% للعملاء الجدد و5% للعملاء الحاليين
+يشتغل في السعودية والإمارات وعُمان 🇸🇦🇦🇪🇴🇲
+احفظ الفيديو عشان ما يضيع منك الكود 📌
+أكواد أكثر على coupona.shop 💛
+
+#كود_خصم_نون #كوبون_نون #السعودية #الامارات #عروض_نون #كوبونا #noon</div>
+  <div class="actions"><button class="copy">Copy caption</button><button class="done">Done</button></div>
+  <details><summary>How to post it</summary><ol class="steps"><li>Open TikTok → <b>Inbox</b> → tap the notification that your post is ready.</li><li>Tap <b>Copy caption</b> above, then paste it into the description box.</li><li>Set <b>Who can watch</b> → <b>Everyone</b>.</li><li><b>More options</b> → <b>Disclose post content</b> → turn on → tick <b>Branded content</b>.</li><li>Tap <b>Post</b>. Then tap <b>Done</b> on this card.</li></ol></details>
+</article>
+<h2>Coming up</h2><p class="empty">No drafts scheduled.</p>
+</main>
+<script>
+const KEY='coupona-done';
+const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||[]}catch{return[]}};
+const save=(v)=>{try{localStorage.setItem(KEY,JSON.stringify(v))}catch{}};
+const done=new Set(load());
+for(const card of document.querySelectorAll('.card')){
+  const id=card.dataset.id, text=card.querySelector('.caption').textContent;
+  card.classList.toggle('is-done',done.has(id));
+  card.querySelector('.copy').onclick=async(e)=>{
+    try{await navigator.clipboard.writeText(text)}catch{const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();document.execCommand('copy');t.remove()}
+    e.target.textContent='Copied ✓';e.target.classList.add('ok');setTimeout(()=>{e.target.textContent='Copy caption';e.target.classList.remove('ok')},2000);
+  };
+  const doneBtn=card.querySelector('.done');
+  doneBtn.textContent=done.has(id)?'Undo':'Done';
+  doneBtn.onclick=()=>{done.has(id)?done.delete(id):done.add(id);save([...done]);card.classList.toggle('is-done',done.has(id));doneBtn.textContent=done.has(id)?'Undo':'Done'};
+}
+</script></body></html>
